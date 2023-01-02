@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { Link, useNavigate } from "react-router-dom";
 function App() {
+  const navigate = useNavigate();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>hello</h2>
+      <Link to="/invoices">Invoices</Link> |{" "}
+      <Link to="/expenses">Expenses</Link>
+      <div>
+        <button onClick={() => navigate(-1)}>Go back</button>
+      </div>
     </div>
   );
 }
